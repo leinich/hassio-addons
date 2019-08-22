@@ -4,6 +4,13 @@
   "slug": "ftpbackup",
   "description": "Creates a backup of the configuration folder config. An archive of the config directory will be stored under backup and also upload the archive on the specified ftp server. The archive will be password protected. Please note that ftp upload is not secure, as the ftp password will be seing in clear text",
   "startup": "before",
+  "arch": [
+    "amd64",
+    "armhf",
+    "i386",
+    "armv7",
+    "aarch64"
+  ],
   "boot": "auto",
   "map": ["config", "backup:rw"],
   "options": {
