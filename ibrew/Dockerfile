@@ -2,8 +2,9 @@ FROM python:2-alpine
 
 ENV LANG C.UTF-8
 
-RUN apk update && apk add bash avahi-tools avahi-compat-libdns_sd screen git py-tornado jq python git py-pip make sudo wget
+RUN apk update && apk add bash avahi-tools avahi-compat-libdns_sd screen git jq git make sudo wget
 WORKDIR /home/app
+RUN pip install -Iv tornado==4.2.1
 RUN wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz
 RUN tar -zxf pybonjour-1.1.1.tar.gz
 RUN cd pybonjour-1.1.1 && /usr/bin/python setup.py install
