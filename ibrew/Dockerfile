@@ -7,7 +7,7 @@ WORKDIR /home/app
 RUN pip install -Iv tornado==4.2.1
 RUN wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz
 RUN tar -zxf pybonjour-1.1.1.tar.gz
-RUN cd pybonjour-1.1.1 && /usr/bin/python setup.py install
+RUN cd pybonjour-1.1.1 && python setup.py install
 RUN git clone https://github.com/Tristan79/iBrew.git
 
 EXPOSE 2080
