@@ -4,5 +4,5 @@ set -e
 echo "[Info] Starting iBrew docker!"
 
 echo "[INFO] Startting ibrew Web"
-/home/app/iBrew/ibrew web
+python /home/app/iBrew/source/ibrewui
 echo "[Info] Finished "
