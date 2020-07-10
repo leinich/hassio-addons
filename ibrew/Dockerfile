@@ -12,7 +12,6 @@ RUN apk add python2
 RUN apk add git 
 RUN apk add py-tornado 
 RUN apk add jq 
-RUN apk add python 
 RUN apk add py-pip 
 RUN apk add make 
 RUN apk add sudo 
