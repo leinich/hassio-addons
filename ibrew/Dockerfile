@@ -3,7 +3,21 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk update && apk add bash avahi-tools avahi-compat-libdns_sd screen python git py-tornado jq python git py-pip make sudo wget
+RUN apk update
+RUN apk add bash 
+RUN apk add avahi-tools 
+RUN apk add avahi-compat-libdns_sd 
+RUN apk add screen 
+RUN apk add python 
+RUN apk add git 
+RUN apk add py-tornado 
+RUN apk add jq 
+RUN apk add python 
+RUN apk add py-pip 
+RUN apk add make 
+RUN apk add sudo 
+RUN apk add wget
+
 WORKDIR /home/app
 RUN wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz
 RUN tar -zxf pybonjour-1.1.1.tar.gz
