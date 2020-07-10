@@ -8,7 +8,7 @@ RUN apk add bash
 RUN apk add avahi-tools 
 RUN apk add avahi-compat-libdns_sd 
 RUN apk add screen 
-RUN apk add python 
+RUN apk add python2 
 RUN apk add git 
 RUN apk add py-tornado 
 RUN apk add jq 
