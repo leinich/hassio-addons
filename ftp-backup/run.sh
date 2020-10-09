@@ -12,6 +12,7 @@ ftpusername=$(jq --raw-output ".ftpusername" $CONFIG_PATH)
 ftppassword=$(jq --raw-output ".ftppassword" $CONFIG_PATH)
 addftpflags=$(jq --raw-output ".addftpflags" $CONFIG_PATH)
 zippassword=$(jq --raw-output ".zippassword" $CONFIG_PATH)
+deleteolderthan=$(jq --raw-output ".deleteolderthan" $CONFIG_PATH)
 
 ftpurl="$ftpprotocol://$ftpserver:$ftpport/$ftpbackupfolder/"
 credentials=""
@@ -32,4 +33,10 @@ echo "[Info] Finished archiving configuration"
 
 echo "[Info] trying to upload $zippath to $ftpurl"
 curl $addftpflags $credentials -T $zippath $ftpurl
+
+if [ "${#deleteolderthan}" -gt "0" ]; then
+	echo "[Info] Deleting files older than $deleteolderthan days"
+	find $hassbackup/homeassistant_backup* -mtime +$deleteolderthan -exec rm {} \;
+fi
+
 echo "[Info] Finished ftp backup"
