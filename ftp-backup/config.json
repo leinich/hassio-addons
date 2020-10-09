@@ -1,8 +1,8 @@
 {
   "name": "FTP Backup",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "slug": "ftpbackup",
-  "description": "Creates a backup of the configuration folder config. An archive of the config directory will be stored under backup and also upload the archive on the specified ftp server. The archive will be password protected. Please note that ftp upload is not secure, as the ftp password will be seing in clear text",
+  "description": "Creates a backup of the configuration folder config. An archive of the config directory will be stored under backup and also upload the archive on the specified ftp server. The archive will be password protected. Please note that ftp upload is not secure, as the ftp password will be sesing in clear text",
   "startup": "before",
   "arch": [
     "amd64",
@@ -14,23 +14,25 @@
   "boot": "auto",
   "map": ["config", "backup:rw"],
   "options": {
-	"ftpprotocol": "ftp",
+    "ftpprotocol": "ftp",
     "ftpserver": "server",
     "ftpport": "21",
     "ftpbackupfolder": "homeassistant",
     "ftpusername": "ftpuser",
     "ftppassword": "ftppass",
-	"addftpflags": "",
-    "zippassword": "homeassistant"
+    "addftpflags": "",
+    "zippassword": "homeassistant",
+    "deleteolderthan": "365"
   },
   "schema": {
-	"ftpprotocol": "str",
+    "ftpprotocol": "str",
     "ftpserver": "str", 
     "ftpport": "int",
     "ftpbackupfolder": "str",
     "ftpusername": "str",
     "ftppassword": "str",
-	"addftpflags": "str",
-    "zippassword": "str"
+    "addftpflags": "str",
+    "zippassword": "str",
+    "deleteolderthan": "int"
   }
 }
